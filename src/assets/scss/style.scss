@@ -5,8 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap");
-@import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -16,7 +14,6 @@
 @import "images";
 @import "code";
 @import "grid";
-@import "container-grid";
 @import "tables";
 @import "forms";
 @import "buttons";
@@ -45,3 +42,10 @@
 @import "spinners";
 @import "utilities";
 @import "print";
+
+.brand-text-icon {
+    color: $primary;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
