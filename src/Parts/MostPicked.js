@@ -16,7 +16,7 @@ export default function MostPicked(props) {
                                             ${item.price}
                                             <span className="font-weight-light"> per {item.unit}</span>
                                         </div>
-                                        <figure className="img-wraper">
+                                        <figure className="img-wrapper">
                                             <img 
                                                 className="img-cover" 
                                                 src={item.imageUrl} 
