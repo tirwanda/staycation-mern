@@ -1,4 +1,5 @@
 import React from 'react'
+import Fade from 'react-reveal/Fade'
 
 import Button from 'elements/Button'
 
@@ -20,6 +21,7 @@ export default function Hero(props) {
     }
 
     return (
+        <Fade bottom delay={500}>
         <section className="container pt-4">
             <div className="row align-item-center">
                 <div className="col-auto pr-5" style={{width: 530}}>
@@ -63,7 +65,7 @@ export default function Hero(props) {
                             <img 
                                 width="36" 
                                 height="36" 
-                                src={IconTraveler} 
+                                src={IconTreasure} 
                                 alt={`${props.data.treasures} Treasures`}
                             />
                             <h6 className="mt-3">
@@ -96,5 +98,6 @@ export default function Hero(props) {
                 </div>
             </div>
         </section>
+        </Fade>
     )
 }
