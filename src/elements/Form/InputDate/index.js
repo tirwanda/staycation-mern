@@ -8,7 +8,7 @@ export default function Number(props) {
 
     const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
 
-    const onChange = e => {
+    const onChange = (e) => {
         let value = String(e.target.value);
         if(prefix) value = value.replace(prefix);
         if(suffix) value = value.replace(suffix);
@@ -20,8 +20,8 @@ export default function Number(props) {
             props.onChange({
                 target: {
                     name: name,
-                    value: +value
-                }
+                    value: +value,
+                },
             });
             setInputValue(`${prefix}${value}${suffix}`)
         }
@@ -32,8 +32,8 @@ export default function Number(props) {
             onChange({
                 target: {
                     name: name,
-                    value: +value - 1
-                }
+                    value: +value - 1,
+                },
             });
     }
     
@@ -42,8 +42,8 @@ export default function Number(props) {
             onChange({
                 target: {
                     name: name,
-                    value: +value + 1
-                }
+                    value: +value + 1,
+                },
             });
     }
 
@@ -60,13 +60,13 @@ export default function Number(props) {
                     max={max}
                     name={name}
                     pattern="[0-9]*"
-                    className="from-control"
+                    className="form-control"
                     placeholder={placeholder ? placeholder : "0"}
                     value={String(InputValue)}
                     onChange={onChange}
                 />
                 <div className="input-group-append">
-                    <span className="input-group-text plus">
+                    <span className="input-group-text plus" onClick={plus}>
                         +
                     </span>
                 </div>
@@ -75,16 +75,16 @@ export default function Number(props) {
     )
 }
 
-Number.propTypes = {
+Number.defaultProps = {
     min: 1,
     max: 1,
     prefix: "",
-    suffix: ""
+    suffix: "",
 };
 
 Number.propTypes = {
     value: propTypes.oneOfType([propTypes.string, propTypes.number]),
     onChange: propTypes.func,
     placeholder: propTypes.string,
-    outerClassName: propTypes.string
+    outerClassName: propTypes.string,
 };
