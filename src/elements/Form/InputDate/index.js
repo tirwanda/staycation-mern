@@ -2,8 +2,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import { DateRange } from 'react-date-range'
 import propTypes from 'prop-types'
 
-import IconCalendar from 'assets/images/icon/icon-calendar'
+import IconCalendar from 'assets/images/icon/icon-calendar.svg'
+import formatDate from 'utils/formatDate'
 
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
 import './index.scss'
 
 export default function Date(props) {
@@ -40,7 +43,7 @@ export default function Date(props) {
     };
 
     const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}
-        ${value.endDate(value.endDate) ? " - " + formatDate(value.endDate) : ""}`
+    ${value.endDate ?  " - " + formatDate(value.endDate) : ""}`
 
     return (
         <div
