@@ -57,7 +57,7 @@ export default class BookingForm extends Component {
                 data: {
                     ...this.state.data,
                     date: {
-                        ...this.state.date,
+                        ...this.state.data.date,
                         endDate: endDate
                     }
                 }
