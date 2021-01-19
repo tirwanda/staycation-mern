@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './assets/scss/style.scss'
 import LandingPage from 'Pages/LandingPage'
 import DetailPage from 'Pages/DetailPage'
+import Checkout from 'Pages/Checkout'
 import Example from 'Pages/Example'
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
     <div className="App">
       <Router>
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/example" component={Example} />
         <Route exact path="/properties/:id" component={DetailPage} />
+        <Route path="/example" component={Example} />
+        <Route path="/checkout" component={Checkout} />
       </Router>
     </div>
   );
