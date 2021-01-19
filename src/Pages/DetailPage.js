@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import Fade from 'react-reveal/Fade'
+
 import Header from 'Parts/Header'
 import PageDetailTitle from 'Parts/PageDetailTitle'
 import FeaturedImage from 'Parts/FeaturedImage'
 import PageDetailDescription from 'Parts/PageDetailDescription'
 import BookingForm from 'Parts/BookingForm'
-
+import Categories from 'Parts/Categories'
+import Testimony from 'Parts/Testimony'
 import Footer from 'Parts/Footer'
 
 import itemDetails from 'json/itemDetails.json'
@@ -28,19 +31,22 @@ export default class DetailPage extends Component {
                 <PageDetailTitle 
                     breadcrumb={breadcrumb}
                     data={itemDetails}
-                >
-                </PageDetailTitle>
+                />
                 <FeaturedImage data={itemDetails.imageUrls}/>
                 <section className="container">
                     <div className="row">
-                        <div className="col-7 pr-5">
-                            <PageDetailDescription data={itemDetails} />
-                        </div>
-                        <div className="col-5">
-                            <BookingForm itemDetails={itemDetails}/>
-                        </div>
+                        <Fade bottom>
+                            <div className="col-7 pr-5">
+                                <PageDetailDescription data={itemDetails} />
+                            </div>
+                            <div className="col-5">
+                                <BookingForm itemDetails={itemDetails}/>
+                            </div>
+                        </Fade>
                     </div>
                 </section>
+                <Categories data={itemDetails.categories}/>
+                <Testimony data={itemDetails.testimonial}/>
                 <Footer />
             </>
         )
