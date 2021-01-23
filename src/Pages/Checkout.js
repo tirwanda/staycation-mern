@@ -96,6 +96,93 @@ export default class Checkout extends Component {
 
                                 <Meta data={steps} current={currentStep} />
                                 <MainContent data={steps} current={currentStep} />
+
+                                {
+                                    currentStep === "bookingInformation" && (
+                                            <Controller>
+                                                {
+                                                    data.firsName !== "" &&
+                                                    data.lastName !== "" &&
+                                                    data.email !== "" &&
+                                                    data.phone !== ""(
+                                                        <Fade>
+                                                            <Button 
+                                                                className="btn mb-3"
+                                                                type="button"
+                                                                isBlock
+                                                                isPrimary
+                                                                hasShadow
+                                                                onClick={nextStep}
+                                                            >
+                                                                Continue to Book
+                                                            </Button>
+                                                        </Fade>
+                                                    )
+                                                }
+
+                                                <Button
+                                                    className="btn"
+                                                    type="link"
+                                                    isBlock
+                                                    isLight
+                                                    href={`/properties/${ItemDetails._id}`}
+                                                >
+                                                    Cancel
+                                                </Button>
+                                            </Controller>
+                                    )
+                                }
+
+                                {
+                                    currentStep === "payment" && (
+                                        <Controller>
+                                            {
+                                                data.proofPayment !== "" && 
+                                                data.bankName !== "" &&
+                                                data.bankHolder !== "" && (
+                                                    <Fade>
+                                                        <Button 
+                                                            className="btn mb-3"
+                                                            type="button"
+                                                            isBlock
+                                                            isPrimary
+                                                            hasShadow
+                                                        >
+                                                            Continue to Book
+                                                        </Button>
+                                                    </Fade>
+                                                )
+                                            }
+
+                                            <Button
+                                                className="btn"
+                                                isLight
+                                                isBlock
+                                                type="button"
+                                                onClick={prevStep}
+                                            >
+                                                Cancel
+                                            </Button>
+                                        </Controller>
+                                    )
+                                }
+
+                                {
+                                    currentStep === "completed" && (
+                                        <Controller>
+                                            <Button
+                                                className="btn mb-3"
+                                                isPrimary
+                                                isBlock
+                                                hasShadow
+                                                type="link"
+                                                href=""
+                                            >
+                                                Back to Home
+                                            </Button>
+                                        </Controller>
+                                    )
+                                }
                             </>
                         }
                     }
