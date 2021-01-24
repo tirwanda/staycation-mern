@@ -19,10 +19,10 @@ export default function Payment(props) {
                 <div className="row justify-content-center align-items-center">
                     <div className="col-5 border-right py-5" style={{ paddingRight: 80 }}>
                         <Fade dellay={300}>
-                            <p className="mb-4">Transfer Pembayaran</p>
+                            <p className="mb-4">Transfer Pembayaran:</p>
                             <p>Tax: {tax}%</p>
-                            <p>Sub total: ${subTotal}</p>
-                            <p>Grand total: ${grandTotal}</p>
+                            <p>Sub total: ${subTotal} USD</p>
+                            <p>Grand total: ${grandTotal} USD</p>
 
                             <div className="row mt-4">
                                 <div className="col-3 text-right">
@@ -37,7 +37,7 @@ export default function Payment(props) {
                                 </div>
                             </div>
 
-                            <div className="col">
+                            <div className="row">
                                 <div className="col-3 text-right">
                                     <img src={logoMandiri} alt="Bank Mandiri" width="60"/>
                                 </div>
@@ -50,6 +50,7 @@ export default function Payment(props) {
                                     </dl>
                                 </div>
                             </div>
+                            
                         </Fade>
                     </div>
 

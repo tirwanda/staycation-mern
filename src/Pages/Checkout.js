@@ -35,6 +35,7 @@ export default class Checkout extends Component {
 
     componentDidMount() {
         window.scroll(0, 0);
+        document.title = "Staycation | Checkout";
     }
 
     render() {
@@ -86,25 +87,25 @@ export default class Checkout extends Component {
 
                 <Stepper steps={steps}>
                     {
-                        (prevStep, nextStep, currentStep, steps) => {
+                        (prevStep, nextStep, CurrentStep, steps) => (
                             <>
                                 <Numbering 
                                     data={steps}
-                                    current={currentStep}
+                                    current={CurrentStep}
                                     style={{ marginBottom: 50 }}
                                 />
 
-                                <Meta data={steps} current={currentStep} />
-                                <MainContent data={steps} current={currentStep} />
+                                <Meta data={steps} current={CurrentStep} />
+                                <MainContent data={steps} current={CurrentStep} />
 
                                 {
-                                    currentStep === "bookingInformation" && (
+                                    CurrentStep === "bookingInformation" && (
                                             <Controller>
                                                 {
-                                                    data.firsName !== "" &&
+                                                    data.firstName !== "" &&
                                                     data.lastName !== "" &&
                                                     data.email !== "" &&
-                                                    data.phone !== ""(
+                                                    data.phone !== "" && (
                                                         <Fade>
                                                             <Button 
                                                                 className="btn mb-3"
@@ -134,7 +135,7 @@ export default class Checkout extends Component {
                                 }
 
                                 {
-                                    currentStep === "payment" && (
+                                    CurrentStep === "payment" && (
                                         <Controller>
                                             {
                                                 data.proofPayment !== "" && 
@@ -168,7 +169,7 @@ export default class Checkout extends Component {
                                 }
 
                                 {
-                                    currentStep === "completed" && (
+                                    CurrentStep === "completed" && (
                                         <Controller>
                                             <Button
                                                 className="btn mb-3"
@@ -184,7 +185,7 @@ export default class Checkout extends Component {
                                     )
                                 }
                             </>
-                        }
+                        )
                     }
                 </Stepper>
             </>
