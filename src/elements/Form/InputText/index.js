@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import propTypes from 'prop-types'
 
+import "./index.scss"
+
 export default function Text(props) {
     const {
         value,
@@ -12,9 +14,9 @@ export default function Text(props) {
         outerClassName,
         inputClassName,
         errorResponse
-    } = props
+    } = props;
 
-    const [hasError, setHasError] = useState(null);
+    const [HasError, setHasError] = useState(null);
     
     let pattern = "";
     if(type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -69,7 +71,7 @@ export default function Text(props) {
                     )
                 }
             </div>
-            {hasError && <span className="error-helper">{hasError}</span>}
+            {HasError && <span className="error-helper">{HasError}</span>}
         </div>
     )
 }

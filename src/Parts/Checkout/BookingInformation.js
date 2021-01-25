@@ -35,8 +35,8 @@ export default function BookingInformation(props) {
                                     <div className="col-auto">
                                         <span>
                                             ${+checkout.duration * ItemDetails.price} USD
-                                            <span className="text-gray-500">per</span>
-                                            {checkout.duration} {ItemDetails.units}
+                                            <span className="text-gray-500"> per </span>
+                                            {checkout.duration} {ItemDetails.unit}
                                             {+checkout.duration > 1 ? "s" : ""}
                                         </span>
                                     </div>

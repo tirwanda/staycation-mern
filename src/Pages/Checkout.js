@@ -20,17 +20,17 @@ export default class Checkout extends Component {
             phone: "",
             proofPayment: "",
             bankName: "",
-            bankHolder: ""
-        }
+            bankHolder: "",
+        },
     };
 
-    onChange = event => {
+    onChange = (event) => {
         this.setState({
             data: {
                 ...this.state.data,
-                [event.target.name]: event.target.value
-            }
-        })
+                [event.target.name]: event.target.value,
+            },
+        });
     };
 
     componentDidMount() {
@@ -148,6 +148,7 @@ export default class Checkout extends Component {
                                                             isBlock
                                                             isPrimary
                                                             hasShadow
+                                                            onClick={nextStep}
                                                         >
                                                             Continue to Book
                                                         </Button>
@@ -171,12 +172,12 @@ export default class Checkout extends Component {
                                 {
                                     CurrentStep === "completed" && (
                                         <Controller>
-                                            <Button
+                                            <Button 
                                                 className="btn mb-3"
-                                                isPrimary
-                                                isBlock
-                                                hasShadow
                                                 type="link"
+                                                isBlock
+                                                isPrimary
+                                                hasShadow
                                                 href=""
                                             >
                                                 Back to Home
