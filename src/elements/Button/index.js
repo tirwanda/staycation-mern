@@ -10,7 +10,7 @@ export default function Button(props) {
     if(props.isLarge) className.push('btn-lg');
     if(props.isLight) className.push("btn-light");
     if(props.isSmall) className.push('btn-sm');
-    if(props.isBlock) className.push('btn-block');
+    if(props.isBlock) className.push('btn-block justify-content-center');
     if(props.hasShadow) className.push('btn-shadow');
 
     const onClick = () => {
