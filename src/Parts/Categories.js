@@ -46,7 +46,7 @@ export default function Categories({ data }) {
 													type="link"
 												>
 													<h5 className="h4">
-														{item.name}
+														{item.title}
 													</h5>
 												</Button>
 												<span className="text-gray-500">
