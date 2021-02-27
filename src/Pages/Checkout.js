@@ -62,14 +62,9 @@ class Checkout extends Component {
 		payload.append('itemId', checkout._id);
 		payload.append('imageUrl', data.proofPayment[0]);
 
-		this.props
-			.submitBooking(payload)
-			.then(() => {
-				nextStep();
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+		this.props.submitBooking(payload).then(() => {
+			nextStep();
+		});
 	};
 
 	render() {
