@@ -21,7 +21,7 @@ class DetailPage extends Component {
 
 		if (!this.props.page[this.props.match.params.id])
 			this.props.fetchPage(
-				`${process.env.REACT_APP_HOST}/api/v1/member/itemDetail/${this.props.match.params.id}`,
+				`/itemDetail/${this.props.match.params.id}`,
 				this.props.match.params.id
 			);
 	}

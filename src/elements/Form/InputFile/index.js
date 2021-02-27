@@ -6,7 +6,7 @@ import './index.scss';
 export default function File(props) {
 	const [fileName, setFileName] = useState('');
 	const {
-		value,
+		// value,
 		placeholder,
 		name,
 		accept,
