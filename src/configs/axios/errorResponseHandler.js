@@ -8,7 +8,6 @@ function errorResponseHandler(error) {
 			if (error.response.status === 500) message = 'Something went wrong';
 			else message = error.response.message;
 			toast(message);
-			console.log(message);
 			return Promise.reject(error);
 		}
 	}
